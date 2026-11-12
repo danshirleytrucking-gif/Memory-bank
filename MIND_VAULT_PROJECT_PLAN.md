@@ -106,7 +106,9 @@ Views such as Today/Tomorrow are derived from dates, not copies of notes. Commit
 
 ## Backup design decision — approved 2026-11-12
 - Store all memories locally on the Android phone by default; no required cloud storage, account, subscription, or automatic uploads.
-- Provide a clearly labeled **Backup Now** button accessible from the main Mind Vault screen, without cluttering the one-card design. Exact placement to be determined in UI mockups.
+- **Revised navigation:** Keep the main Mind Vault screen clean. Instead of a dedicated main-screen Backup Now button, add a themed **Bank Manager** button on the main screen that opens a separate management page.
+- The **Bank Manager** page contains **Backup Now**, **Restore Backup**, last successful backup date/time, category and subject management (add/rename/reorganize), and related memory-management settings.
+- Preserve the simple single-card main screen, vault microphone, and speaker toggle. Bank Manager is a management area, not a second memory-card dashboard.
 - Provide a **weekly backup reminder** (configurable and dismissible) that encourages the user to make a backup; the reminder itself does not upload data.
 - Manual backup exports a portable, preferably encrypted archive of all notes, categories, settings, and necessary metadata to a user-selected destination such as phone files, USB drive, or computer.
 - Provide **Restore Backup** with confirmation, validation, and clear warning before replacing existing local data.
@@ -115,6 +117,7 @@ Views such as Today/Tomorrow are derived from dates, not copies of notes. Commit
 - Investigate Android's own automatic device-backup behavior and configure the app consistently with the no-cloud-by-default requirement.
 
 ## 10. Settings and customization
+- Organize category management and backup/restore under the **Bank Manager** page; avoid duplicating these controls on the main screen.
 - Speaker on/off; voice confirmation verbosity; sound effects.
 - Short-term review interval (e.g., 7/14 days) and morning briefing settings.
 - Category/subject management.
