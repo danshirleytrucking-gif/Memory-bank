@@ -12,7 +12,7 @@ Priorities:
 - Low-distraction voice operation; avoid requiring screen interaction while driving. Never encourage looking at or touching the phone while driving.
 - Fast capture of short facts as well as complex long-term notes.
 - User control over retention, deletion, and classification.
-- Offline-first note storage and retrieval where feasible; research offline speech recognition and speech synthesis separately.
+- Offline-first note storage and retrieval are required; aim for offline speech recognition and speech synthesis, subject to validation on Android hardware.
 - Preserve exact original note content and timestamps; AI organization should not silently alter source facts.
 - Simple, uncluttered portrait interface.
 
@@ -103,6 +103,16 @@ Views such as Today/Tomorrow are derived from dates, not copies of notes. Commit
 - User-controlled privacy, microphone permissions, and storage permissions.
 - Background or locked-screen continuous listening is **not yet validated**; research Android microphone/background service restrictions, battery management, and safety before committing to this capability.
 - Minimize unnecessary cloud dependence and recurring costs.
+
+## Backup design decision — approved 2026-11-12
+- Store all memories locally on the Android phone by default; no required cloud storage, account, subscription, or automatic uploads.
+- Provide a clearly labeled **Backup Now** button accessible from the main Mind Vault screen, without cluttering the one-card design. Exact placement to be determined in UI mockups.
+- Provide a **weekly backup reminder** (configurable and dismissible) that encourages the user to make a backup; the reminder itself does not upload data.
+- Manual backup exports a portable, preferably encrypted archive of all notes, categories, settings, and necessary metadata to a user-selected destination such as phone files, USB drive, or computer.
+- Provide **Restore Backup** with confirmation, validation, and clear warning before replacing existing local data.
+- Show date/time of last successful backup. Do not claim success until export completes.
+- Backup/restore should function without internet where Android storage access allows.
+- Investigate Android's own automatic device-backup behavior and configure the app consistently with the no-cloud-by-default requirement.
 
 ## 10. Settings and customization
 - Speaker on/off; voice confirmation verbosity; sound effects.
